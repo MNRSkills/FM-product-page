@@ -11,6 +11,7 @@ export default {
       blackNoise: "hsl(0, 0%, 0%)",
       orangePrimary: "hsl(26, 100%, 55%)",
       paleOrangePrimary: "hsl(25, 100%, 94%)",
+      overlay: "rgba(0, 0, 0, 0.5)"
     },
     extend: {
       container: {

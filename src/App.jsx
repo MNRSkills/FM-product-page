@@ -6,9 +6,10 @@ import axios from "axios";
 import Navbar from "./Component/Navbar";
 import ProductImage from "./Component/productImage";
 import ProductDesc from "./Component/ProductDesc";
+import LightHouse from "./Component/lightHouse";
 
 function App() {
-  // ---- STATE OF THE IMAGE ----
+  // ---- STATE OF THE IMAGE & PRODUCT ----
   const [product, setProduct] = useState({
     id: 1,
     src: [
@@ -20,6 +21,7 @@ function App() {
     quantity: 1,
     display: false,
   });
+  const [lightOn, setLightHouse] = useState(false);
   const [count, setCount] = useState(1);
   const [selected, setSelection] = useState("images/image-product-1.jpg");
   const [addCart, setAddToCart] = useState({});
@@ -46,21 +48,39 @@ function App() {
   };
   //-------------------------- //
 
+  // ---------- ADD TO CART ------- //
   const addToCart = (id) => {
     // console.log(id, "SoMthing here");
     setAddToCart(id);
   };
+  // ----------------------- //
 
-  useEffect(() => {}, []);
+  // ---- TOGGLE MODAL OR LIGHTHOUSE ---
+  const toggleLight = () => {
+    setLightHouse(!lightOn);
+  };
+  // --------------------------- //
+
+  // useEffect(() => {}, []);
   return (
     <div className="app">
       <Navbar />
-      <div className="grid grid-cols-2 h-screen p-20">
+      <div className="grid grid-cols-2 h-screen p-20 relative">
+        {lightOn == true ? (
+          <LightHouse
+            lightHouse={toggleLight}
+            productImg={product.src}
+            selected={selected}
+            handleImage={handleImage}
+          />
+        ) : null}
+        {/* <LightHouse /> */}
         <ProductImage
           imageState={product.src}
           handleImage={handleImage}
           selected={selected}
           product={product.src}
+          lightHouse={toggleLight}
         />
 
         <ProductDesc
