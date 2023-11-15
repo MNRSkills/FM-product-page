@@ -4,7 +4,8 @@ import Next from "../assets/images/icon-next.svg";
 import Previous from "../assets/images/icon-previous.svg";
 
 function LightHouse(props) {
-  console.log(props, "PROPS");
+  // console.log(props, "PROPS");
+  console.log(props.productImg);
 
   return (
     <div className="bg-overlay h-screen w-full absolute z-10 top-0">
@@ -12,20 +13,24 @@ function LightHouse(props) {
         <img src={Close} alt="" className="m-auto h-10" />
       </span>
       <div className="m-auto rounded-lg max-w-lg z-20 relative">
+        {/* {props.productImg.map((previous, index) => {
+          console.log("THIS is Previous", previous);
+        })} */}
+
         <div
           className="absolute bottom-60 -left-4 px-3 py-2 rounded-full bg-whiteNoise"
-          onClick={() => props.handleImage()}
+          onClick={() => props.handlePrevious()}
         >
           <img src={Previous} alt="" className="" />
         </div>
         <img
-          src={props.selected}
+          src={props.productImg[props.currentPhoto]}
           alt=""
           className="object-cover rounded-lg w-full"
         />
         <div
           className="absolute bottom-60 -right-4 px-3 py-2 rounded-full bg-whiteNoise"
-          onClick={() => props.handleImage()}
+          onClick={() => props.handleNext()}
         >
           <img src={Next} alt="" className="" />
         </div>

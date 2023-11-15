@@ -20,8 +20,8 @@ export default {
       },
 
       fontFamily: {
-        header: ["Kumbh", 700],
-        content: ["Kumbh", 400],
+        header: ["Kumbh"],
+        content: ["Kumbh"],
       },
     },
   },

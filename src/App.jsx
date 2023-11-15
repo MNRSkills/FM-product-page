@@ -21,12 +21,13 @@ function App() {
     quantity: 1,
     display: false,
   });
+  const [currentPhoto, setCurrentPhoto] = useState(0);
   const [lightOn, setLightHouse] = useState(false);
   const [count, setCount] = useState(1);
   const [selected, setSelection] = useState("images/image-product-1.jpg");
   const [addCart, setAddToCart] = useState({});
 
-  // ----------------------------------
+  // ---------------------------------- //
 
   // FILTERING MY STATE FOR AN IMAGE TO SHOWCASE --
   const handleImage = (id) => {
@@ -40,18 +41,20 @@ function App() {
 
   // QUANTITY BUTTONS AND COUNTER ---
   const increaseCount = () => {
-    setCount((count) => count + 1);
+    setProduct({ ...product, quantity: product.quantity + 1 });
   };
 
   const removeCount = () => {
-    count > 1 ? setCount((count) => count - 1) : null;
+    product.quantity > 1
+      ? setProduct({ ...product, quantity: product.quantity - 1 })
+      : null;
   };
   //-------------------------- //
 
   // ---------- ADD TO CART ------- //
   const addToCart = (id) => {
-    // console.log(id, "SoMthing here");
-    setAddToCart(id);
+    console.log(id, "SoMthing here");
+    // setAddToCart(id);
   };
   // ----------------------- //
 
@@ -60,6 +63,22 @@ function App() {
     setLightHouse(!lightOn);
   };
   // --------------------------- //
+
+  // -------- HANDLE next previous buttons -----
+  const handlePrevious = () => {
+    console.log("Previous click");
+    if (currentPhoto > 0) {
+      setCurrentPhoto(currentPhoto - 1);
+    }
+  };
+
+  const handleNext = () => {
+    // console.log(currentPhoto + 1, "THIS IS ONLY A TEST");
+    if (currentPhoto < product.src.length - 1) {
+      setCurrentPhoto((currentPhoto) => currentPhoto + 1);
+      // console.log(currentPhoto)
+    }
+  };
 
   // useEffect(() => {}, []);
   return (
@@ -72,9 +91,11 @@ function App() {
             productImg={product.src}
             selected={selected}
             handleImage={handleImage}
+            handlePrevious={handlePrevious}
+            handleNext={handleNext}
+            currentPhoto={currentPhoto}
           />
         ) : null}
-        {/* <LightHouse /> */}
         <ProductImage
           imageState={product.src}
           handleImage={handleImage}
@@ -84,7 +105,7 @@ function App() {
         />
 
         <ProductDesc
-          counter={count}
+          counter={product.quantity}
           increaseCount={increaseCount}
           removeCount={removeCount}
           addToCart={addToCart}
