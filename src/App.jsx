@@ -20,12 +20,12 @@ function App() {
     ],
     quantity: 1,
     display: false,
+    price: 125,
   });
   const [currentPhoto, setCurrentPhoto] = useState(0);
   const [lightOn, setLightHouse] = useState(false);
-  const [count, setCount] = useState(1);
   const [selected, setSelection] = useState("images/image-product-1.jpg");
-  const [addCart, setAddToCart] = useState({});
+  const [addCart, setAddToCart] = useState(0);
 
   // ---------------------------------- //
 
@@ -54,7 +54,7 @@ function App() {
   // ---------- ADD TO CART ------- //
   const addToCart = (id) => {
     console.log(id, "SoMthing here");
-    // setAddToCart(id);
+    setAddToCart(product.price * product.quantity);
   };
   // ----------------------- //
 
@@ -83,7 +83,7 @@ function App() {
   // useEffect(() => {}, []);
   return (
     <div className="app">
-      <Navbar />
+      <Navbar productQuantity={product.quantity} addToCart={addCart} />
       <div className="grid grid-cols-2 h-screen p-20 relative">
         {lightOn == true ? (
           <LightHouse

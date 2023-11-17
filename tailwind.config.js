@@ -21,7 +21,7 @@ export default {
 
       fontFamily: {
         header: ["Kumbh"],
-        content: ["Kumbh"],
+        body: ["Kumbh"],
       },
     },
   },

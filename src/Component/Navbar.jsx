@@ -1,9 +1,13 @@
 import React from "react";
 import Logo from "../assets/images/logo.svg";
+import Cart from "../Component/Cart";
 
-function Navbar() {
+function Navbar(props) {
   return (
-    <nav role="navigation" className="p-10 border border-bottom border-1 w-4/5 m-auto">
+    <nav
+      role="navigation"
+      className="p-10 border border-bottom border-1 w-4/5 m-auto"
+    >
       <div className="container flex justify-around content-center">
         <div className="md:hidden">Burger</div>
         <div>
@@ -16,7 +20,10 @@ function Navbar() {
           <li className="mx-2">About</li>
           <li className="mx-2">Contact</li>
         </ul>
-        <span>cart</span>
+        <Cart
+          productQuantity={props.productQuantity}
+          addToCart={props.addToCart}
+        />
         <span>profile pic</span>
       </div>
     </nav>

@@ -8,7 +8,7 @@ function ProductDesc(props) {
       <h2 className="font-header text-orangePrimary mt-16 font-bold">
         SNEAKER COMPANY
       </h2>
-      <h1 className="font-header text-blackNoise text-5xl font-bold mt-10">
+      <h1 className="text-blackNoise text-5xl font-bold mt-10">
         Fall Limited Edition Sneakers
       </h1>
       <p className="max-w-md text-base font-content leading-7 mt-10">
