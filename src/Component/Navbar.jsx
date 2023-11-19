@@ -23,6 +23,7 @@ function Navbar(props) {
         <Cart
           productQuantity={props.productQuantity}
           addToCart={props.addToCart}
+          handleDelete={props.handleDelete}
         />
         <span>profile pic</span>
       </div>

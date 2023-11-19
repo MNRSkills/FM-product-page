@@ -53,7 +53,6 @@ function App() {
 
   // ---------- ADD TO CART ------- //
   const addToCart = (id) => {
-    console.log(id, "SoMthing here");
     setAddToCart(product.price * product.quantity);
   };
   // ----------------------- //
@@ -73,17 +72,25 @@ function App() {
   };
 
   const handleNext = () => {
-    // console.log(currentPhoto + 1, "THIS IS ONLY A TEST");
     if (currentPhoto < product.src.length - 1) {
       setCurrentPhoto((currentPhoto) => currentPhoto + 1);
-      // console.log(currentPhoto)
     }
   };
 
-  // useEffect(() => {}, []);
+  // ------------------------------  //
+
+  // ----- DELETE CART ---------
+  const handleDelete = () => {
+    setAddToCart(0);
+    setProduct({ ...product, quantity: 1 });
+  };
   return (
     <div className="app">
-      <Navbar productQuantity={product.quantity} addToCart={addCart} />
+      <Navbar
+        handleDelete={handleDelete}
+        productQuantity={product.quantity}
+        addToCart={addCart}
+      />
       <div className="grid grid-cols-2 h-screen p-20 relative">
         {lightOn == true ? (
           <LightHouse
