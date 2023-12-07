@@ -22,9 +22,9 @@ function Cart(props) {
         />
       </div>
       {showDetail == true ? (
-        <div className="absolute rounded-lg w-96 top-20 shadow-md -left-24 bg-whiteNoise z-10">
-          <div className="flex justify-around items-center mt-12">
-            <img src={Thumbnail} alt="" className="w-14" />
+        <div className="absolute rounded-lg md:w-80 top-20 shadow-md -left-24 bg-whiteNoise z-10">
+          <div className="flex justify-around items-center mt-12 mx-2">
+            <img src={Thumbnail} alt="" className="w-14"/>
             <div className="container">
               <h2 className="max-w-md"> Fall Limited Edition Sneakers</h2>
               <br />
@@ -37,7 +37,7 @@ function Cart(props) {
               </span>
             </div>
             <span className="" onClick={() => props.handleDelete()}>
-              <img src={Trash} alt="delete" className="w-6" />
+              <img src={Trash} alt="delete" className="w-6 mr-2" />
             </span>
           </div>
           <button
@@ -53,35 +53,7 @@ function Cart(props) {
           </button>
         </div>
       ) : null}
-      {/* <div className="absolute rounded-lg w-96 top-20 shadow-md -left-24 bg-whiteNoise z-10">
-        <div className="flex justify-around items-center mt-12">
-          <img src={Thumbnail} alt="" className="w-14" />
-          <div className="container">
-            <h2 className="max-w-md"> Fall Limited Edition Sneakers</h2>
-            <br />
-            <span>
-              $125.00 x{props.addToCart === 0 ? 0 : `${props.productQuantity}`}
-            </span>
-            <span className="text-bold text-blackNoise">
-              {"\n$" + `${props.addToCart}`}
-            </span>
-          </div>
-          <span className="" onClick={() => props.handleDelete()}>
-            <img src={Trash} alt="delete" className="w-6" />
-          </span>
-        </div>
-        <button
-          className="bg-orangePrimary 
-                       w-5/6
-                       py-5
-                       rounded-xl
-                     text-whiteNoise
-                       my-6
-                       ml-6"
-        >
-          Checkout
-        </button>
-      </div> */}
+      
     </div>
   );
 }

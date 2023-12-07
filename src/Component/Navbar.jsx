@@ -13,12 +13,12 @@ function Navbar(props) {
         <div>
           <img src={Logo} alt="" />
         </div>
-        <ul className="flex justify-center items-center">
-          <li className="mx-2">Collection</li>
-          <li className="mx-2">Men</li>
-          <li className="mx-2">Women</li>
-          <li className="mx-2">About</li>
-          <li className="mx-2">Contact</li>
+        <ul className="flex justify-center items-center cursor-pointer">
+          <li> <div class="h-14 mx-2 active:border-b-4 active:border-orangePrimary "><h1>Collection</h1></div></li>
+          <li > <div><h1>Men</h1></div></li>
+          <li > <div><h1>Women</h1></div></li>
+          <li > <div><h1>About</h1></div></li>
+          <li > <div><h1>Contact</h1></div></li>
         </ul>
         <Cart
           productQuantity={props.productQuantity}

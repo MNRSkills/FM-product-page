@@ -91,7 +91,7 @@ function App() {
         productQuantity={product.quantity}
         addToCart={addCart}
       />
-      <div className="grid grid-cols-2 h-screen p-20 relative">
+      <div className="grid md:grid-cols-2 h-screen md:p-20 relative">
         {lightOn == true ? (
           <LightHouse
             lightHouse={toggleLight}
