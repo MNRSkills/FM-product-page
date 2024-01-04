@@ -84,6 +84,12 @@ function App() {
     setAddToCart(0);
     setProduct({ ...product, quantity: 1 });
   };
+
+  // -------------------------- //
+
+  // useEffect(() => {
+  //   <
+  // },[])
   return (
     <div className="app">
       <Navbar
