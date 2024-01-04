@@ -4,7 +4,7 @@ import Cart from "../assets/images/icon-cart.svg";
 function ProductDesc(props) {
   console.log(props);
   return (
-    <div className="text-left">
+    <div className="text-left p-8">
       <h2 className="font-header text-orangePrimary mt-16 font-bold">
         SNEAKER COMPANY
       </h2>
@@ -20,8 +20,8 @@ function ProductDesc(props) {
       <span className="text-orangePrimary bg-paleOrangePrimary p-2 rounded-lg text-bold text-center">
         50%
       </span>
-      <div className="flex mt-20">
-        <div className="bg-lightGrayishBlue flex justify-center items-center w-1/2 cursor-pointer text-center mr-2 rounded-xl shadow-sm">
+      <div className="flex mt-20 flex-col w-full md:w-1/3">
+        <div className="bg-lightGrayishBlue w-full p-20 flex justify-center items-center md:w-1/2 cursor-pointer text-center mr-2 rounded-xl shadow-sm">
           <span
             className="w-1/3 text-orangePrimary font-bold text-2xl"
             onClick={() => props.removeCount()}
@@ -39,7 +39,7 @@ function ProductDesc(props) {
           </span>
         </div>
         <button
-          className="bg-orangePrimary p-5 w-1/2 rounded-lg text-whiteNoise flex items-center justify-around"
+          className="bg-orangePrimary md:p-5 w-full p-20 md:w-1/2 rounded-lg text-whiteNoise flex items-center justify-around"
           onClick={() => props.addToCart(props.productId)}
         >
           {" "}
