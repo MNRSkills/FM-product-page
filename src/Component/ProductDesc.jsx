@@ -16,36 +16,43 @@ function ProductDesc(props) {
         Featuring a durable rubber outer sole, they'll withstand everythinghthe
         weather can offer.
       </p>
-      <span className="text-blackNoise font-bold text-4xl mt-4">$125.00</span>
-      <span className="text-orangePrimary bg-paleOrangePrimary p-2 rounded-lg text-bold text-center">
-        50%
-      </span>
-      <div className="flex mt-20 flex-col w-full md:w-1/3">
-        <div className="bg-lightGrayishBlue w-full p-20 flex justify-center items-center md:w-1/2 cursor-pointer text-center mr-2 rounded-xl shadow-sm">
+      <div className="p-2 md:max-w-64 md:-ml-5 flex items-center">
+        <span className="text-blackNoise font-bold text-4xl m-auto">
+          $125.00
+        </span>
+        <span className="text-orangePrimary bg-paleOrangePrimary p-2 rounded-lg text-bold m-auto">
+          50%
+        </span>
+      </div>
+      <div className="flex mt-20 flex-col md:flex-row w-full">
+        {/* counter action begining  */}
+        <div className="bg-lightGrayishBlue w-full p-20 flex justify-center items-center md:max-w-1/3 md:p-5 cursor-pointer text-center md:mr-2 rounded-xl shadow-sm">
           <span
-            className="w-1/3 text-orangePrimary font-bold text-2xl"
+            className="w-3/5 text-orangePrimary font-bold text-3xl"
             onClick={() => props.removeCount()}
           >
             -
           </span>
-          <span className="w-1/3 text-blackNoise font-bold text-2xl">
+          <span className="w-1/3 text-blackNoise font-bold text-3xl">
             {props.counter}
           </span>
           <span
-            className="w-1/3 text-orangePrimary font-bold text-2xl"
+            className="w-3/5 text-orangePrimary font-bold text-3xl"
             onClick={() => props.increaseCount()}
           >
             +
           </span>
         </div>
+        {/* ----------- */}
+        {/* add to cart buttton */}
         <button
-          className="bg-orangePrimary md:p-5 w-full p-20 md:w-1/2 rounded-lg text-whiteNoise flex items-center justify-around"
+          className="bg-orangePrimary md:p-5 w-full p-20 md:max-w-40 rounded-lg text-whiteNoise flex items-center justify-around md:ml-5"
           onClick={() => props.addToCart(props.productId)}
         >
-          {" "}
           <img src={Cart} alt="" />
           Add to Cart
         </button>
+        {/* ------- */}
       </div>
     </div>
   );
