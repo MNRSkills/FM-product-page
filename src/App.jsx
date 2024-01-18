@@ -4,7 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import axios from "axios";
 import Navbar from "./Component/Navbar";
-import ProductImage from "./Component/productImage";
+import ProductImage from "./Component/ProductImage";
 import ProductDesc from "./Component/ProductDesc";
 import LightHouse from "./Component/lightHouse";
 
